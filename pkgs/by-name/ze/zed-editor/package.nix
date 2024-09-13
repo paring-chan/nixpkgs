@@ -88,10 +88,10 @@ rustPlatform.buildRustPackage rec {
   version = "0.152.3";
 
   src = fetchFromGitHub {
-    owner = "zed-industries";
+    owner = "paring-chan";
     repo = "zed";
-    rev = "refs/tags/v${version}";
-    hash = "sha256-0goeDz0mrZGPxsU51WGJz0mG5hdbY/75l/1Dyg2JLl4=";
+    rev = "4011c1667b64dec444786cd1a30393fae860e558";
+    hash = "sha256-0yZkqINK35+f0mMRtWKcLqc6kpr3a4Ut7bFNFByOdcs=";
     fetchSubmodules = true;
   };
 
@@ -101,13 +101,15 @@ rustPlatform.buildRustPackage rec {
     ./0001-generate-licenses.patch
   ];
 
+  cargoHash = "";
+
   cargoLock = {
     lockFile = ./Cargo.lock;
     outputHashes = {
       "alacritty_terminal-0.24.1-dev" = "sha256-b4oSDhsAAYjpYGfFgA1Q1642JoJQ9k5RTsPgFUpAFmc=";
       "async-pipe-0.1.3" = "sha256-g120X88HGT8P6GNCrzpS5SutALx5H+45Sf4iSSxzctE=";
       "blade-graphics-0.5.0" = "sha256-j/JI34ZPD7RAHNHu3krgDLnIq4QmmZaZaU1FwD7f2FM=";
-      "cosmic-text-0.11.2" = "sha256-TLPDnqixuW+aPAhiBhSvuZIa69vgV3xLcw32OlkdCcM=";
+      "cosmic-text-0.12.1" = "sha256-x0XTxzbmtE2d4XCG/Nuq3DzBpz15BbnjRRlirfNJEiU=";
       "font-kit-0.14.1" = "sha256-qUKvmi+RDoyhMrZ7T6SoVAyMc/aasQ9Y/okzre4SzXo=";
       "lsp-types-0.95.1" = "sha256-N4MKoU9j1p/Xeowki/+XiNQPwIcTm9DgmfM/Eieq4js=";
       "nvim-rs-0.8.0-pre" = "sha256-VA8zIynflul1YKBlSxGCXCwa2Hz0pT3mH6OPsfS7Izo=";
